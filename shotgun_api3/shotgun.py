@@ -2968,6 +2968,15 @@ class Shotgun(object):
 
         return session_token
 
+    def retrieve_ws_server_secret(self, ws_server_id):
+        """
+        Creates or retrieves the shared secret for the given server id.
+        """
+        return self._call_rpc(
+            "retrieve_ws_server_secret",
+            {"ws_server_id": ws_server_id}
+        )
+
     def _build_opener(self, handler):
         """
         Build urllib2 opener with appropriate proxy handler.
